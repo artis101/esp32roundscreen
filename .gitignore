@@ -1,0 +1,70 @@
+# Build directory
+build/
+
+# Compiled binary files
+*.hex
+*.elf
+*.eep
+
+# Arduino IDE files
+*.hex.with_bootloader.hex
+
+# Debug files
+*.lst
+*.map
+*.sym
+
+# Dependencies
+*.d
+
+# Object files
+*.o
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Arduino IDE temporary files
+.DS_Store
+*~
+._*
+.*.sw*
+
+# IDE specific files
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Arduino specific
+arduino_secrets.h
+secrets.h
+
+# Platform specific
+app/bin/
+app/pde.*
+app/build/
+app/private/
+app/signed/
+
+# Dependency directories
+libraries/
+
+# Local configuration file
+*.local
+
+# Debug log
+debug.log
+
+# Backup files
+*.bak
+*.backup
