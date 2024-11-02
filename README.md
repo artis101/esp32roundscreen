@@ -16,10 +16,10 @@ This is a work in progress to showcase this module. A write up will follow soon.
 - `LovyanGFX` 1.1.6
 - `lvgl` 8.3.0
 
-### `lv_conf.h`` adjustments
+### `lv_conf.h` adjustments
 
 ```c
-#define LV_USE_FS_FATFS # 1
+#define LV_USE_FS_FATFS 1
 ```
 
 Needs to be changed to
@@ -28,4 +28,21 @@ Needs to be changed to
 #define LV_USE_FS_FATFS 0
 ```
 
-This board doesn't have an SD card reader or internal flash that can be accessed. Instead SPIFFS is used to store assets.
+This board doesn't have an SD card reader or internal flash that can be accessed.
+
+The ESP32 is partitioned as a Huge APP preset with 3Mb of application memory and 1Mb of SPIFFS for storage.
+It is also a good idea to change
+
+```c
+#define LV_BUILD_EXAMPLES 1
+```
+
+to
+
+```c
+#define LV_BUILD_EXAMPLES 0
+```
+
+That will avoid building all `lvgl` examples and save a lot of time compiling.
+
+Unless you want to compile the examples just as the factory demo does.
