@@ -1,6 +1,12 @@
-# ESP32C3 GC9A01 dev board with a 1.28" 240x240 IPS LCD
+# ESP32C3 GC9A01 dev board with a 1.28" 240x240 LCD
 
-This is a work in progress to showcase this module. A write up will follow soon.
+This is a fun project I made to play with the ESP32 C3 microcontroller and a round 1.28 inch TFT IPS display.
+
+## Description
+
+The SKU of this unit is `ESP32-2424S012C-I`. It uses a 240 by 240 pixel display with a GC9A01 driver. The board has a 3.3V regulator and a USB-C connector for power and programming.
+
+The core is an ESP32-C3-MINI-1U module, a 32-bit RISC-V single-core processor, up to 160MHz. The board has 4MB of flash memory and 384KB of ROM. 400Kb of SRAM is available for the user. 8Kb of RTC memory is also available. The board has a 2.4GHz WiFi and Bluetooth 5.0.
 
 ## How it looks like?
 
