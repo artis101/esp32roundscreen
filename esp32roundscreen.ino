@@ -4,6 +4,7 @@
 #include <LovyanGFX.hpp>
 #include <Ticker.h>
 #include "CST816D.h"
+#include "ui.h"
 
 #define I2C_SDA 4
 #define I2C_SCL 5
@@ -44,9 +45,6 @@ static const char *ASCII_ART[] = {
     "       ^......25",
     "         ^....26",
 }; 
-// static const char *ASCII_ART[] = {
-//     "^##########################$",
-// };
 
 class LGFX : public lgfx::LGFX_Device
 {
@@ -187,7 +185,7 @@ String getAsciArtString()
 void setup()
 {
     Serial.begin(115200); /* prepare for possible serial debug */
-    Serial.println("I am LVGL_Arduino");
+    Serial.println("Hi I'm Artis' Arduino");
 
     // ticker.attach(1, tcr1s);
 
@@ -229,24 +227,9 @@ void setup()
         lv_indev_drv_register(&indev_drv);
     }
 
-    /* Set the background color to black */
-    static lv_style_t style_bg;
-    lv_style_init(&style_bg);
-    lv_style_set_bg_color(&style_bg, lv_color_black());
-    lv_style_set_bg_opa(&style_bg, LV_OPA_COVER);
-    lv_obj_add_style(lv_scr_act(), &style_bg, 0);
+    init_ui();
 
-    /* Create and style the label */
-    static lv_style_t style_label;
-    lv_style_init(&style_label);
-    lv_style_set_text_color(&style_label, lv_color_white());
-    lv_style_set_text_font(&style_label, &lv_font_unscii_8);
-    lv_obj_t *label = lv_label_create(lv_scr_act());
-    lv_obj_add_style(label, &style_label, 0);
-    lv_label_set_text(label, getAsciArtString().c_str());
-    lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
-
-    Serial.println("Setup done");
+    Serial.println("Setup done, enjoy the sakura");
 
     pinMode(3, OUTPUT);
     digitalWrite(3, HIGH);
@@ -259,32 +242,4 @@ void loop()
     lv_timer_handler(); /* let the GUI do its work */
     delay(5);
 }
-// #include "Arduino.h"
-// #include "CST816D.h"
 
-// #define I2C_SDA 4
-// #define I2C_SCL 5
-// #define TP_INT 0
-// #define TP_RST 1
-
-// CST816D touch(I2C_SDA, I2C_SCL, TP_RST, TP_INT);
-
-// void setup()
-// {
-//   Serial.begin(115200);
-//   touch.begin();
-// }
-
-// bool FingerNum;
-// uint8_t gesture;
-// uint16_t touchX, touchY;
-// void loop()
-// {
-//   FingerNum = touch.getTouch(&touchX, &touchY, &gesture);
-//   if (FingerNum)
-//   {
-//     Serial.printf("X:%d,Y:%d,gesture:%x\n", touchX, touchY, gesture);
-//   }
-
-//   delay(100);
-// }
