@@ -10,7 +10,7 @@ The core is an ESP32-C3-MINI-1U module, a 32-bit RISC-V single-core processor, u
 
 ## How it looks like?
 
-![Picture of ESP32C3 module with a round 1.28 inch IPS display](https://github.com/artis101/esp32roundscreen/blob/main/screenshot.png?raw=true "Picture of ESP32C3 module with a round 1.28 inch IPS display")
+![Picture of ESP32C3 module with a round 1.28 inch IPS display](https://raw.githubusercontent.com/artis101/esp32roundscreen/refs/heads/main/screenshot.png?v=20241103-1 "Picture of ESP32C3 module with a round 1.28 inch IPS display")
 
 ### Links
 
